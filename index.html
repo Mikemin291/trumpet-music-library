@@ -75,22 +75,64 @@
         .score:hover {
             background-color: #e0e0e0;
         }
+        .divider {
+            width: 80%;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+        .additional-links-wrapper {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .additional-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .additional-links a {
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+            padding: 20px;
+            text-decoration: none;
+            color: black;
+            display: block;
+            width: 200px; /* Set a fixed width to match the score buttons */
+            text-align: center;
+        }
+        .additional-links a:hover {
+            background-color: #e0e0e0;
+        }
     </style>
     <script>
         function filterScores() {
             const searchInput = document.getElementById('search-input').value.toLowerCase();
-            const scores = document.querySelectorAll('.score');
-            
+            const scores = document.querySelectorAll('.score:not(.static-link)'); // Exclude static-link class
+            let hasVisibleScores = false;
+
             scores.forEach(score => {
                 const text = score.textContent.toLowerCase();
                 if (text.includes(searchInput)) {
                     score.style.display = 'block';
+                    hasVisibleScores = true;
                 } else {
                     score.style.display = 'none';
                 }
             });
+
+            // Show or hide the "no results" message
+            const noResultsMessage = document.getElementById('no-results-message');
+            if (hasVisibleScores) {
+                noResultsMessage.style.display = 'none';
+            } else {
+                noResultsMessage.style.display = 'block';
+            }
         }
-        
+
         function clearSearch() {
             document.getElementById('search-input').value = '';
             filterScores();
@@ -108,7 +150,8 @@
             <input type="text" id="search-input" class="search-input" onkeyup="filterScores()" placeholder="Search for music scores...">
             <button class="clear-button" onclick="clearSearch()">×</button>
         </div>
-        <div class="scores-wrapper">
+        <div class="scores-wrapper" id="scores-wrapper">
+            <div id="no-results-message" style="display: none;">No results for that song, check out the links below to find it there</div>
             <a href="https://drive.google.com/file/d/1yzsIXKZtDsCkt1_8LGl0GEZ7AoA93r7N/view" class="score">In the Hall of the Mountain King by Edvard Grieg</a>
             <a href="https://drive.google.com/file/d/1-kVeItxIKKNtPdZXhXNg9hz7tbq_Fo26/view" class="score">The Star Spangled Banner by Francis Scott Key</a>
             <a href="https://drive.google.com/file/d/14D_OrNGeH_Q01t1ZLlfKRneXt-clnFYi/view" class="score">I Remember Clifford by Benny Golson</a>
@@ -144,6 +187,14 @@
             <a href="https://drive.google.com/file/d/1kvmvL3_SLF_zh3i7S3vZbkNdJurKF0Hm/view" class="score">You Are My Sunshine by Jimmie Davis</a>
             <a href="https://drive.google.com/file/d/11GhQ2BlTG55BSK6kHVBXmUpxMmKOQWcF/view" class="score">Fly Love (Rio) by Jamie Foxx</a>
             <!-- Add more scores as needed -->
+        </div>
+        <div class="divider"></div>
+        <div class="additional-links-wrapper">
+            <h1>Places to Gather More Music</h1>
+            <div class="additional-links">
+                <a href="https://www.musescore.com" class="score static-link">Musescore</a>
+                <a href="https://www.dailysheetmusic.com" class="score static-link">Daily Sheet Music</a>
+            </div>
         </div>
     </div>
 </body>
