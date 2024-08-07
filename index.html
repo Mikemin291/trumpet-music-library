@@ -64,55 +64,52 @@
             margin-top: 20px;
         }
         .score {
-            background-color: #f0f0f0;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin: 10px;
-            padding: 20px;
-            text-decoration: none;
-            color: black;
-            display: block;
-        }
-        .score:hover {
-            background-color: #e0e0e0;
-        }
-        .divider {
-            width: 80%;
-            border-top: 1px solid #ccc;
-            margin: 20px 0;
-        }
-        .additional-links-wrapper {
-            width: 80%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .additional-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .additional-links a {
-            background-color: #f0f0f0;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin: 10px;
-            padding: 20px;
-            text-decoration: none;
-            color: black;
-            display: block;
-            width: 200px; /* Set a fixed width to match the score buttons */
-            text-align: center;
-        }
-        .additional-links a:hover {
-            background-color: #e0e0e0;
-        }
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    padding: 20px;
+    text-decoration: none;
+    color: black;
+    display: block;
+    transition: transform 0.1s;
+}
+
+.score:hover {
+    background-color: #e0e0e0;
+}
+
+.score:active {
+    transform: translateY(4px);
+}
+
+.additional-links a {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    padding: 20px;
+    text-decoration: none;
+    color: black;
+    display: block;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.1s;
+}
+
+.additional-links a:hover {
+    background-color: #e0e0e0;
+}
+
+.additional-links a:active {
+    transform: translateY(4px);
+}
+
     </style>
     <script>
         function filterScores() {
             const searchInput = document.getElementById('search-input').value.toLowerCase();
-            const scores = document.querySelectorAll('.score:not(.static-link)'); // Exclude static-link class
+            const scores = document.querySelectorAll('.score:not(.static-link)');
             let hasVisibleScores = false;
 
             scores.forEach(score => {
@@ -125,7 +122,6 @@
                 }
             });
 
-            // Show or hide the "no results" message
             const noResultsMessage = document.getElementById('no-results-message');
             if (hasVisibleScores) {
                 noResultsMessage.style.display = 'none';
