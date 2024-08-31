@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="qu7orEALhgSz4HmitgSE3kXMM8nvn52BYbMf2nZq_tA" />
+    <meta name="google-site-verification" content="qu7orEALhgSz4HmitgSE3kXMM8nvn52BYbMf2nZq_tA">
     <title>Michael's Open Library of Music for Trumpet</title>
-    <link href="https://fonts.googleapis.com/css2?family=Prociono&display=swap" rel="stylesheet">
+    <link href="./Michael&#39;s Open Library of Music for Trumpet_files/css2" rel="stylesheet">
     <style>
         body {
             font-family: 'Prociono', serif;
@@ -56,6 +56,12 @@
             font-size: 20px;
             color: gray;
         }
+        .divider {
+            width: 80%;
+            height: 2px;
+            background-color: #ccc;
+            margin: 20px 0;
+        }
         .scores-wrapper {
             width: 80%;
             display: grid;
@@ -64,47 +70,46 @@
             margin-top: 20px;
         }
         .score {
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 10px;
-    padding: 20px;
-    text-decoration: none;
-    color: black;
-    display: block;
-    transition: transform 0.1s;
-}
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+            padding: 20px;
+            text-decoration: none;
+            color: black;
+            display: block;
+            transition: transform 0.1s;
+        }
 
-.score:hover {
-    background-color: #e0e0e0;
-}
+        .score:hover {
+            background-color: #e0e0e0;
+        }
 
-.score:active {
-    transform: translateY(4px);
-}
+        .score:active {
+            transform: translateY(4px);
+        }
 
-.additional-links a {
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 10px;
-    padding: 20px;
-    text-decoration: none;
-    color: black;
-    display: block;
-    width: 200px;
-    text-align: center;
-    transition: transform 0.1s;
-}
+        .additional-links a {
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+            padding: 20px;
+            text-decoration: none;
+            color: black;
+            display: block;
+            width: 200px;
+            text-align: center;
+            transition: transform 0.1s;
+        }
 
-.additional-links a:hover {
-    background-color: #e0e0e0;
-}
+        .additional-links a:hover {
+            background-color: #e0e0e0;
+        }
 
-.additional-links a:active {
-    transform: translateY(4px);
-}
-
+        .additional-links a:active {
+            transform: translateY(4px);
+        }
     </style>
     <script>
         function filterScores() {
@@ -139,14 +144,28 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="https://pngimg.com/d/music_notes_PNG3.png" alt="">
+            <img src="./Michael&#39;s Open Library of Music for Trumpet_files/pngimg.com - music_notes_PNG3.png" alt="">
             <h1>Michael's Open Library of Music for Trumpet</h1>
-            <img src="https://pngimg.com/d/music_notes_PNG39.png" alt="">
+            <img src="./Michael&#39;s Open Library of Music for Trumpet_files/pngimg.com - music_notes_PNG39.png" alt="">
         </div>
+
+        <!-- Search Bar -->
         <div class="search-bar">
             <input type="text" id="search-input" class="search-input" onkeyup="filterScores()" placeholder="Search for music scores...">
             <button class="clear-button" onclick="clearSearch()">×</button>
         </div>
+
+        <!-- Space Below Search Bar -->
+        <br>
+	<div style="margin-bottom: 0.5rem;"></div>
+
+        <!-- New Section for Professor Greg Wing's 20-Minute Practice Warm-Up -->
+        <a href="https://raw.githubusercontent.com/Mikemin291/trumpet-music-library/main/index.html" class="score">Professor Greg Wing's 20-Minute Practice Warm-Up</a>
+
+        <!-- Divider Above Sheet Music Buttons -->
+        <div class="divider"></div>
+
+        <!-- Scores Wrapper -->
         <div class="scores-wrapper" id="scores-wrapper">
             <div id="no-results-message" style="display: none;">No results for that song, check out the links below to find it there</div>
             <a href="https://drive.google.com/file/d/1yzsIXKZtDsCkt1_8LGl0GEZ7AoA93r7N/view" class="score">In the Hall of the Mountain King by Edvard Grieg</a>
@@ -194,13 +213,16 @@
             <a href="https://files.catbox.moe/onuwtz.pdf" class="score">Krusty Krab Spongebob Theme</a>
             <a href="https://files.catbox.moe/prhy34.pdf" class="score">Tek it by Cafuné</a>
             <!-- Add more scores as needed -->
+            <!-- Add more scores as needed -->
         </div>
+
         <div class="divider"></div>
+
         <div class="additional-links-wrapper">
             <h1>Places to Gather More Music</h1>
             <div class="additional-links">
-                <a href="https://www.musescore.com" class="score static-link">Musescore</a>
-                <a href="https://www.dailysheetmusic.com" class="score static-link">Daily Sheet Music</a>
+                <a href="https://www.musescore.com/" class="score static-link">Musescore</a>
+                <a href="https://www.dailysheetmusic.com/" class="score static-link">Daily Sheet Music</a>
             </div>
         </div>
     </div>
